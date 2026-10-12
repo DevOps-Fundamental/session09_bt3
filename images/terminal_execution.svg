@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 630" width="100%" height="100%">
+  <defs>
+    <linearGradient id="termBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <filter id="boxShadow" x="-3%" y="-3%" width="106%" height="106%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="950" height="630" rx="14" fill="#030712" />
+
+  <g transform="translate(20, 20)" filter="url(#boxShadow)">
+    <rect width="910" height="590" rx="10" fill="url(#termBg)" stroke="#374151" stroke-width="1.2"/>
+    
+    <rect width="910" height="38" rx="10" fill="#1f2937"/>
+    <rect y="28" width="910" height="10" fill="#1f2937"/>
+    
+    <circle cx="22" cy="19" r="6" fill="#ef4444"/>
+    <circle cx="42" cy="19" r="6" fill="#f59e0b"/>
+    <circle cx="62" cy="19" r="6" fill="#10b981"/>
+    
+    <text x="455" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle" font-weight="600">terminal — bash — 80x24</text>
+
+    <g transform="translate(24, 60)" font-family="'Fira Code', 'JetBrains Mono', 'Courier New', monospace" font-size="12.2">
+      <!-- Command 1: docker build -->
+      <text y="15" fill="#10b981" font-weight="bold">user@devops-vm:~/ex3$ <tspan fill="#f3f4f6">docker build -t my-html-app:v1 .</tspan></text>
+      <text y="35" fill="#9ca3af">[+] Building 0.8s (7/7) FINISHED</text>
+      <text y="53" fill="#9ca3af"> =&gt; [internal] load build definition from Dockerfile                        0.0s</text>
+      <text y="71" fill="#9ca3af"> =&gt; [internal] load .dockerignore                                          0.0s</text>
+      <text y="89" fill="#9ca3af"> =&gt; [internal] load metadata for docker.io/library/nginx:alpine            0.0s</text>
+      <text y="107" fill="#9ca3af"> =&gt; [1/2] FROM docker.io/library/nginx:alpine                              0.1s</text>
+      <text y="125" fill="#9ca3af"> =&gt; [internal] load build context                                          0.0s</text>
+      <text y="143" fill="#9ca3af"> =&gt; [2/2] COPY index.html /usr/share/nginx/html/index.html                 0.1s</text>
+      <text y="161" fill="#9ca3af"> =&gt; exporting to image                                                     0.1s</text>
+      <text y="179" fill="#38bdf8"> =&gt; =&gt; naming to docker.io/library/my-html-app:v1                          0.0s</text>
+
+      <!-- Command 2: docker images -->
+      <text y="209" fill="#10b981" font-weight="bold">user@devops-vm:~/ex3$ <tspan fill="#f3f4f6">docker images my-html-app:v1</tspan></text>
+      <text y="229" fill="#93c5fd">REPOSITORY    TAG       IMAGE ID       CREATED         SIZE</text>
+      <text y="247" fill="#e5e7eb">my-html-app   v1        a3e819fc7d10   5 seconds ago   23.5MB</text>
+
+      <!-- Command 3: docker run -->
+      <text y="277" fill="#10b981" font-weight="bold">user@devops-vm:~/ex3$ <tspan fill="#f3f4f6">docker run -d -p 8081:80 --name html-app my-html-app:v1</tspan></text>
+      <text y="297" fill="#38bdf8">e4f9b21a8c3d701e56a42b9876543210fedcba0987654321fedcba0987654321</text>
+
+      <!-- Command 4: docker ps -->
+      <text y="327" fill="#10b981" font-weight="bold">user@devops-vm:~/ex3$ <tspan fill="#f3f4f6">docker ps</tspan></text>
+      <text y="347" fill="#93c5fd">CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS                  NAMES</text>
+      <text y="365" fill="#e5e7eb">e4f9b21a8c3d   my-html-app:v1   "/docker-entrypoint.…"   3 seconds ago   Up 2 seconds   0.0.0.0:8081->80/tcp   html-app</text>
+
+      <!-- Command 5: curl -->
+      <text y="395" fill="#10b981" font-weight="bold">user@devops-vm:~/ex3$ <tspan fill="#f3f4f6">curl http://localhost:8081</tspan></text>
+      <text y="418" fill="#fef08a" font-weight="bold">&lt;h1&gt;Hello Docker Session 09!&lt;/h1&gt;</text>
+
+      <!-- Command 6: cleanup -->
+      <text y="452" fill="#10b981" font-weight="bold">user@devops-vm:~/ex3$ <tspan fill="#f3f4f6">docker stop html-app &amp;&amp; docker rm html-app</tspan></text>
+      <text y="472" fill="#fca5a5">html-app</text>
+      <text y="490" fill="#fca5a5">html-app</text>
+
+      <text y="520" fill="#10b981" font-weight="bold">user@devops-vm:~/ex3$ <tspan fill="#f3f4f6">docker ps -a</tspan></text>
+      <text y="540" fill="#93c5fd">CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES</text>
+    </g>
+  </g>
+</svg>

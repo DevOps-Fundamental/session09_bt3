@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="srcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="buildGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="imgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="runGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <rect width="960" height="580" fill="url(#bgGrad)" rx="16"/>
+
+  <rect x="25" y="20" width="910" height="60" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="480" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="700" fill="#f8fafc" text-anchor="middle">QUY TRÌNH BUILD IMAGE VÀ KHỞI CHẠY CONTAINER TỪ DOCKERFILE</text>
+  <text x="480" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">Dockerfile • Context • docker build -t my-html-app:v1 • Port 8081:80 • curl Verification</text>
+
+  <!-- Step 1: Source Files -->
+  <g transform="translate(35, 105)">
+    <rect width="200" height="340" rx="12" fill="#1e293b" stroke="#0284c7" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect width="200" height="40" rx="12" fill="url(#srcGrad)"/>
+    <text x="100" y="26" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">1. SOURCE FILES</text>
+
+    <g transform="translate(12, 55)">
+      <rect width="176" height="110" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="88" y="22" font-family="sans-serif" font-size="11" font-weight="600" fill="#38bdf8" text-anchor="middle">Dockerfile</text>
+      <text x="15" y="45" font-family="monospace" font-size="10" fill="#cbd5e1">FROM nginx:alpine</text>
+      <text x="15" y="68" font-family="monospace" font-size="10" fill="#cbd5e1">COPY index.html \</text>
+      <text x="25" y="86" font-family="monospace" font-size="9" fill="#94a3b8">/usr/share/nginx/</text>
+      <text x="25" y="100" font-family="monospace" font-size="9" fill="#94a3b8">html/index.html</text>
+    </g>
+
+    <g transform="translate(12, 180)">
+      <rect width="176" height="135" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+      <text x="88" y="22" font-family="sans-serif" font-size="11" font-weight="600" fill="#38bdf8" text-anchor="middle">index.html</text>
+      <text x="15" y="50" font-family="monospace" font-size="9.5" fill="#fef08a">&lt;h1&gt;</text>
+      <text x="15" y="70" font-family="monospace" font-size="9.5" fill="#fef08a">Hello Docker</text>
+      <text x="15" y="90" font-family="monospace" font-size="9.5" fill="#fef08a">Session 09!</text>
+      <text x="15" y="110" font-family="monospace" font-size="9.5" fill="#fef08a">&lt;/h1&gt;</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M 235 275 L 265 275" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <polygon points="265,270 275,275 265,280" fill="#38bdf8"/>
+
+  <!-- Step 2: Build Process -->
+  <g transform="translate(275, 105)">
+    <rect width="200" height="340" rx="12" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect width="200" height="40" rx="12" fill="url(#buildGrad)"/>
+    <text x="100" y="26" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">2. DOCKER BUILD</text>
+
+    <g transform="translate(12, 55)">
+      <rect width="176" height="70" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="88" y="22" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#c084fc" text-anchor="middle">Build Command</text>
+      <text x="88" y="44" font-family="monospace" font-size="10" fill="#f1f5f9" text-anchor="middle">docker build</text>
+      <text x="88" y="58" font-family="monospace" font-size="9" fill="#a855f7" text-anchor="middle">-t my-html-app:v1 .</text>
+    </g>
+
+    <g transform="translate(12, 140)">
+      <rect width="176" height="85" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="88" y="22" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#c084fc" text-anchor="middle">Layer 1: Base Image</text>
+      <text x="88" y="44" font-family="monospace" font-size="9.5" fill="#cbd5e1" text-anchor="middle">FROM nginx:alpine</text>
+      <text x="88" y="65" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Tải base OS và Nginx</text>
+    </g>
+
+    <g transform="translate(12, 240)">
+      <rect width="176" height="85" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="88" y="22" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#c084fc" text-anchor="middle">Layer 2: COPY Layer</text>
+      <text x="88" y="44" font-family="monospace" font-size="9.5" fill="#cbd5e1" text-anchor="middle">COPY index.html ...</text>
+      <text x="88" y="65" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Ghi đè trang chủ Nginx</text>
+    </g>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <path d="M 475 275 L 505 275" stroke="#c084fc" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <polygon points="505,270 515,275 505,280" fill="#c084fc"/>
+
+  <!-- Step 3: Resulting Image -->
+  <g transform="translate(515, 105)">
+    <rect width="190" height="340" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect width="190" height="40" rx="12" fill="url(#imgGrad)"/>
+    <text x="95" y="26" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">3. DOCKER IMAGE</text>
+
+    <g transform="translate(12, 55)">
+      <rect width="166" height="80" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="83" y="22" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#fbbf24" text-anchor="middle">Image Name &amp; Tag</text>
+      <text x="83" y="45" font-family="monospace" font-size="11" fill="#fef08a" text-anchor="middle">my-html-app:v1</text>
+      <text x="83" y="66" font-family="sans-serif" font-size="9.5" fill="#94a3b8" text-anchor="middle">Kích thước: ~23.5 MB</text>
+    </g>
+
+    <g transform="translate(12, 150)">
+      <rect width="166" height="165" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="83" y="22" font-family="sans-serif" font-size="10.5" font-weight="600" fill="#fbbf24" text-anchor="middle">Cấu trúc Layer đóng gói</text>
+      <rect x="15" y="38" width="136" height="30" rx="4" fill="#334155"/>
+      <text x="83" y="58" font-family="sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">index.html (vài chục bytes)</text>
+      
+      <rect x="15" y="78" width="136" height="30" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="83" y="98" font-family="sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">Nginx Server binary</text>
+
+      <rect x="15" y="118" width="136" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
+      <text x="83" y="138" font-family="sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Alpine Linux Rootfs</text>
+    </g>
+  </g>
+
+  <!-- Arrow 3 to 4 -->
+  <path d="M 705 275 L 735 275" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <polygon points="735,270 745,275 735,280" fill="#fbbf24"/>
+
+  <!-- Step 4: Run Container & Verify -->
+  <g transform="translate(745, 105)">
+    <rect width="180" height="340" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect width="180" height="40" rx="12" fill="url(#runGrad)"/>
+    <text x="90" y="26" font-family="sans-serif" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">4. RUN &amp; VERIFY</text>
+
+    <g transform="translate(10, 55)">
+      <rect width="160" height="95" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="80" y="20" font-family="sans-serif" font-size="10" font-weight="600" fill="#34d399" text-anchor="middle">Khởi chạy Container</text>
+      <text x="80" y="40" font-family="monospace" font-size="8.5" fill="#f1f5f9" text-anchor="middle">docker run -d</text>
+      <text x="80" y="56" font-family="monospace" font-size="8.5" fill="#f1f5f9" text-anchor="middle">-p 8081:80</text>
+      <text x="80" y="72" font-family="monospace" font-size="8.5" fill="#f1f5f9" text-anchor="middle">--name html-app</text>
+      <text x="80" y="88" font-family="monospace" font-size="8" fill="#34d399" text-anchor="middle">my-html-app:v1</text>
+    </g>
+
+    <g transform="translate(10, 165)">
+      <rect width="160" height="150" rx="8" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+      <text x="80" y="20" font-family="sans-serif" font-size="10" font-weight="600" fill="#34d399" text-anchor="middle">Kiểm tra kết quả</text>
+      <text x="80" y="42" font-family="monospace" font-size="8.5" fill="#93c5fd" text-anchor="middle">curl http://</text>
+      <text x="80" y="58" font-family="monospace" font-size="8.5" fill="#93c5fd" text-anchor="middle">localhost:8081</text>
+      
+      <rect x="8" y="72" width="144" height="65" rx="5" fill="#022c22" stroke="#059669" stroke-width="1"/>
+      <text x="80" y="93" font-family="sans-serif" font-size="8.5" font-weight="600" fill="#6ee7b7" text-anchor="middle">KẾT QUẢ TRẢ VỀ:</text>
+      <text x="80" y="112" font-family="monospace" font-size="7.5" fill="#fef08a" text-anchor="middle">&lt;h1&gt;Hello Docker</text>
+      <text x="80" y="126" font-family="monospace" font-size="7.5" fill="#fef08a" text-anchor="middle">Session 09!&lt;/h1&gt;</text>
+    </g>
+  </g>
+
+  <!-- Bottom workflow summary -->
+  <g transform="translate(35, 465)">
+    <rect width="890" height="85" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="30" y="30" font-family="sans-serif" font-size="12" font-weight="700" fill="#38bdf8">TÓM TẮT QUY TRÌNH:</text>
+    <text x="30" y="52" font-family="sans-serif" font-size="11.5" fill="#cbd5e1">• Tạo tệp nguồn: index.html chứa nội dung tiêu đề và Dockerfile chỉ định Base Image &amp; sao chép tệp.</text>
+    <text x="30" y="72" font-family="sans-serif" font-size="11.5" fill="#cbd5e1">• Build đóng gói thành Image độc lập my-html-app:v1, khởi chạy trên cổng 8081 và xác thực bằng curl.</text>
+  </g>
+</svg>
